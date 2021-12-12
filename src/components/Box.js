@@ -1,9 +1,11 @@
 import React from 'react'
 
-export default function Header() {
+export default function Box() {
     return (
-        <div>
+        <div
             
+        >
+         Hello! 
         </div>
     )
 }
