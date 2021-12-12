@@ -5,7 +5,7 @@ export default function Memegenerator() {
     const [topText, setTopText] = useState("One Does Not Simply")
     const [bottomText, setBottomText] = useState("Learn Hooks")
     const [image, setImage] = useState("")
-    const [darkMode, setDarkMode] = useState(false)
+    //const [darkMode, setDarkMode] = useState(false)
     const [boxesArray, setBoxesArray] = useState(
     [
     {
@@ -34,17 +34,12 @@ export default function Memegenerator() {
     },   
 ])
 
-const styles = 
-    darkMode ? {border: "1px solid red", borderRadius: "7px", backgroundColor: "black", height: "5em", width: "5em"}
-     : {border: "1px solid black", borderRadius: "7px", backgroundColor: "pink", height: "5em", width: "5em"}
-
-
 let randomNum;
 let randomNumRoundDown;
 let randomInteger;
 
 const newArray = boxesArray.map(box => {
-    return <div key={box.id} style={styles}></div>
+    return <Box key={box.id} on={box.on}/>
 })
 
 function getRandomNum() {
@@ -62,9 +57,9 @@ const fetchMemes = function() {
         )
 }   
 
-const handleClick = function() {
-    setDarkMode(prevMode => !prevMode)
-}
+// const handleClick = function() {
+//     setDarkMode(prevMode => !prevMode)
+// }
 
 useEffect(() => {
     fetchMemes()
@@ -72,9 +67,9 @@ useEffect(() => {
 
     return (
         <div>
-            <button
+            {/* <button
                 onClick={handleClick}
-            ></button>
+            >Dark/Light</button> */}
             <h1>{topText}</h1>
             <img
                 src={image ? image  : "https://i.imgflip.com/4t0m5.jpg"}
